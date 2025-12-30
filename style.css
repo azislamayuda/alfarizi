@@ -6,6 +6,12 @@
     --secondary-color: #666;
     --bg-color: #fff;
     --card-radius: 30px;
+    --section-padding: 3rem;
+}
+
+/* Reset & Base */
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -13,7 +19,64 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background-color: #f0f0f0; /* Fallback */
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Utilities */
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: #999;
+}
+
+.small {
+    font-size: 0.8rem;
+}
+
+.fw-bold {
+    font-weight: 600;
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+.mb-3 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.mx-2 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 /* Parallax Hero Section */
@@ -22,19 +85,18 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 70vh; /* Takes up 70% of viewport initially */
+    height: 70vh;
     background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: -1; /* Stay behind the content */
+    z-index: -1;
     display: flex;
-    align-items: flex-end; /* Align title near bottom */
+    align-items: flex-end;
     justify-content: center;
-    padding-bottom: 100px; /* Space for name before overlap */
+    padding-bottom: 100px;
 }
 
-/* Overlay to darken image slightly for text readability */
 .hero-section::after {
     content: '';
     position: absolute;
@@ -42,7 +104,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
 }
 
 .hero-title {
@@ -52,12 +114,12 @@ body {
     z-index: 1;
     position: relative;
     margin-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Sliding Content Card */
 .content-wrapper {
-    margin-top: 60vh; /* Start content lower down to reveal hero */
+    margin-top: 60vh;
     background-color: var(--bg-color);
     border-top-left-radius: var(--card-radius);
     border-top-right-radius: var(--card-radius);
@@ -65,11 +127,10 @@ body {
     width: 100%;
     position: relative;
     z-index: 10;
-    box-shadow: 0px -5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0px -5px 20px rgba(0, 0, 0, 0.1);
     padding-bottom: 50px;
 }
 
-/* Little visual handle */
 .drag-handle {
     width: 50px;
     height: 5px;
@@ -79,8 +140,11 @@ body {
 }
 
 .profile-header {
-    text-align: center;
-    padding: 2rem 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .profile-name {
@@ -89,15 +153,27 @@ body {
     margin-bottom: 0.5rem;
 }
 
-.follow-btn {
-    border-radius: 20px;
+/* Button Component */
+.btn {
+    display: inline-block;
     padding: 8px 30px;
     font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 20px;
     transition: all 0.3s ease;
+    background: transparent;
 }
 
-.follow-btn:hover {
+.btn-follow {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-follow:hover,
+.btn-follow.active {
     background-color: var(--primary-color);
     color: white;
 }
@@ -107,28 +183,54 @@ body {
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 2rem;
+    margin-top: 1.5rem;
+    text-align: center;
+    max-width: 600px;
 }
 
+/* Stats */
 .stats-row {
     display: flex;
     justify-content: space-around;
+    width: 100%;
     padding: 1rem 0;
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
     margin-bottom: 2rem;
 }
 
+.stat-item {
+    text-align: center;
+}
+
 .stat-item h3 {
-    margin: 0;
     font-size: 1.2rem;
     font-weight: 600;
+    margin-bottom: 0.2rem;
 }
 
 .stat-item span {
     color: #999;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* Section Title */
+.section-title-container {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.section-label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #999;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
 /* Gallery Grid */
@@ -136,7 +238,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
-    padding: 0 15px;
+    width: 100%;
 }
 
 .gallery-item {
@@ -145,6 +247,7 @@ body {
     overflow: hidden;
     border-radius: 15px;
     position: relative;
+    cursor: pointer;
 }
 
 .gallery-item img {
@@ -152,6 +255,7 @@ body {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .gallery-item:hover img {
@@ -166,10 +270,31 @@ body {
     background-color: #f9f9f9;
     margin-top: 40px;
     border-top: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: #666;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: #000;
 }
 
 /* Desktop Polish */
 @media (min-width: 992px) {
+    .container {
+        max-width: 1140px;
+    }
+
     .hero-section {
         width: 40%;
         height: 100vh;
@@ -177,25 +302,29 @@ body {
         top: 0;
         background-position: center;
     }
-    
+
     .content-wrapper {
         margin-top: 0;
         margin-left: 40%;
         width: 60%;
         min-height: 100vh;
-        border-radius: 0; /* Remove rounded top on desktop split */
-        padding: 40px;
+        border-radius: 0;
+        padding-top: 3rem;
     }
 
     .hero-title {
-        display: none; /* Hide duplicate title on hero in desktop, show in profile maybe */
+        display: none;
     }
 
     .drag-handle {
         display: none;
     }
-    
+
     .gallery-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .profile-header {
+        padding-top: 0;
     }
 }
