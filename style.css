@@ -2,541 +2,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 :root {
-    --primary-color: #000;
-    --secondary-color: #666;
-    --bg-color: #fff;
-    --card-radius: 30px;
-    --section-padding: 3rem;
-}
-
-/* Reset & Base */
-* {
-    box-sizing: border-box;
+    --bg-dark: #050505;
+    --card-bg: #111;
+    --text-muted: #999;
+    --border-color: #222;
 }
 
 body {
+    background-color: var(--bg-dark);
+    color: #fff;
     font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    background-color: #f0f0f0;
-    color: #333;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-    margin: 0;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Utilities */
-.container {
-    width: 100%;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.text-muted {
-    color: #999;
-}
-
-.small {
-    font-size: 0.8rem;
-}
-
-.fw-bold {
-    font-weight: 600;
-}
-
-.mt-4 {
-    margin-top: 1.5rem;
-}
-
-.mb-3 {
-    margin-bottom: 1rem;
-}
-
-.mb-2 {
-    margin-bottom: 0.5rem;
-}
-
-.mx-2 {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-}
-
-/* =========================================
-   MOBILE VIEW STYLES
-   ========================================= */
-
-.mobile-view {
-    display: block;
-    width: 100%;
-}
-
-/* Parallax Hero Section */
-.hero-section {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70vh;
-    background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -1;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: 100px;
-}
-
-.hero-section::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
-}
-
-.hero-title {
-    color: white;
-    font-weight: 600;
-    font-size: 2.5rem;
-    z-index: 1;
-    position: relative;
-    margin-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* Sliding Content Card */
-.content-wrapper {
-    margin-top: 60vh;
-    background-color: var(--bg-color);
-    border-top-left-radius: var(--card-radius);
-    border-top-right-radius: var(--card-radius);
-    min-height: 100vh;
-    width: 100%;
-    position: relative;
-    z-index: 10;
-    box-shadow: 0px -5px 20px rgba(0, 0, 0, 0.1);
+    padding-top: 30px;
     padding-bottom: 50px;
 }
 
-.drag-handle {
-    width: 50px;
-    height: 5px;
-    background-color: #ddd;
-    border-radius: 5px;
-    margin: 15px auto;
-}
-
-.profile-header {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.profile-name {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-/* Button Component */
-.btn {
-    display: inline-block;
-    padding: 8px 30px;
-    font-size: 0.9rem;
-    font-weight: 400;
-    text-align: center;
-    cursor: pointer;
-    border: 1px solid transparent;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-    background: transparent;
-}
-
-.btn-follow {
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
-.btn-follow:hover,
-.btn-follow.active {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.bio-text {
-    color: var(--secondary-color);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    margin-top: 1.5rem;
-    text-align: center;
-    max-width: 600px;
-}
-
-/* Stats */
-.stats-row {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    padding: 1rem 0;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 2rem;
-}
-
-.stat-item {
-    text-align: center;
-}
-
-.stat-item h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 0.2rem;
-}
-
-.stat-item span {
-    color: #999;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-}
-
-/* Section Title */
-.section-title-container {
-    width: 100%;
-    text-align: left;
-    margin-bottom: 1rem;
-    margin-top: 2rem;
-}
-
-.section-label {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #999;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-/* Gallery Grid */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    width: 100%;
-}
-
-.gallery-item {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    border-radius: 15px;
-    position: relative;
-    cursor: pointer;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-    display: block;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.05);
-}
-
-/* Footer Element */
-.custom-footer {
-    padding: 60px 20px 40px;
-    background-color: #f8f9fa;
-    margin-top: 60px;
-    border-top: 1px solid #eee;
-    font-size: 0.9rem;
-    color: #6c757d;
-}
-
-.footer-top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: 30px;
-}
-
-/* Footer Nav */
-.footer-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-}
-
-.footer-nav a {
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #6c757d;
-    transition: color 0.2s;
-    letter-spacing: 0.5px;
-}
-
-.footer-nav a:hover {
-    color: var(--primary-color);
-}
-
-/* App Buttons / Social Group */
-.footer-apps {
-    display: flex;
-    gap: 20px;
-}
-
-/* Divider */
-.footer-divider {
-    border: 0;
-    border-top: 1px solid #e9ecef;
-    margin: 0 0 30px 0;
-    width: 100%;
-}
-
-/* Footer Bottom */
-.footer-bottom {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.copyright {
-    font-size: 0.85rem;
-    color: #adb5bd;
-}
-
-.social-icon {
-    color: #6c757d;
-    transition: color 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-}
-
-.social-icon:hover {
-    color: var(--primary-color);
-}
-
-@media (min-width: 768px) {
-    .footer-top {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .footer-bottom {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-}
-
-/* =========================================
-   DESKTOP VIEW (BENTO GRID)
-   ========================================= */
-
-.desktop-view {
-    display: none;
-}
-
-/* Media Query to Switch Views */
-@media (min-width: 992px) {
-
-    /* Hide Mobile View */
-    .mobile-view {
-        display: none !important;
-        visibility: hidden;
-        height: 0;
-        overflow: hidden;
-    }
-
-    /* Show Desktop View */
-    .desktop-view {
-        display: block !important;
-        visibility: visible;
-        background-color: #050505;
-        min-height: 100vh;
-        color: #fff;
-        font-family: 'Poppins', sans-serif;
-        padding: 40px;
-    }
-
-    /* Reset global constraints that might interfere */
-    body {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-        background-color: #050505;
-        /* Match bg */
-        color: #fff;
-    }
-}
-
-/* Bento Grid Styles */
-.bento-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 20px;
-}
-
-.bento-col {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
 .bento-card {
-    background-color: #111;
-    border-radius: 20px;
-    padding: 25px;
-    border: 1px solid #222;
-    position: relative;
-    overflow: hidden;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 24px;
+    height: 100%;
 }
 
 .bento-card:hover {
     border-color: #333;
 }
 
-.bento-title {
+/* Typography */
+.section-title {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 5px;
-    color: #fff;
 }
 
-.bento-subtitle {
-    color: #666;
+.section-subtitle {
     font-size: 0.9rem;
-    margin-bottom: 20px;
+    color: #666;
+    margin-bottom: 1rem;
 }
 
-.bento-text {
-    color: #999;
-    font-size: 0.95rem;
+.text-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
     line-height: 1.6;
 }
 
-.bento-year-badge {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    background-color: #000;
+/* Custom Badges */
+.year-badge {
+    background: #000;
     color: #666;
-    padding: 5px 12px;
-    border-radius: 15px;
+    border: 1px solid #222;
+    padding: 6px 12px;
+    border-radius: 12px;
     font-size: 0.8rem;
     font-weight: 600;
-    border: 1px solid #222;
+    float: right;
 }
 
-/* Specific Cards */
-.avatar-card {
-    background-color: #f0f0f0;
-    height: 300px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.avatar-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.bio-card h2 {
-    font-size: 1.3rem;
-    line-height: 1.5;
-    font-weight: 400;
-    color: #ddd;
-}
-
-.interests-row {
-    display: flex;
-    gap: 15px;
-    margin-top: 5px;
-    align-items: center;
-}
-
-.interest-tag {
-    background-color: #000;
-    border: 1px solid #222;
-    padding: 8px 15px;
-    border-radius: 12px;
-    font-size: 0.85rem;
-    color: #999;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.list-item {
-    margin-bottom: 8px;
-    color: #bbb;
-    font-size: 0.9rem;
-    display: flex;
-    gap: 10px;
-}
-
-.list-item::before {
-    content: "•";
-    color: #666;
-}
-
-/* Tools Row */
-.tools-row {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
+/* Tool Icons */
 .tool-icon {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 900;
     font-size: 0.8rem;
+    font-weight: 700;
 }
 
-/* Tool Colors */
+/* Tool Colors from prev step */
 .ai {
     background: #330000;
     color: #ff9a00;
@@ -579,70 +114,52 @@ a {
     border: 1px solid #31a8ff;
 }
 
-/* Education Stack */
+/* Interest Tags */
+.interest-tag {
+    background: #000;
+    border: 1px solid #222;
+    color: #888;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+/* Pill Buttons */
+.pill-btn {
+    background: #000;
+    border: 1px solid #222;
+    color: #888;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    text-decoration: none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.pill-btn:hover {
+    color: #fff;
+    border-color: #555;
+}
+
+/* Education Divider */
 .edu-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 0;
     border-bottom: 1px solid #222;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .edu-item:last-child {
     border-bottom: none;
-}
-
-.edu-title {
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #fff;
-    margin-bottom: 2px;
-}
-
-.edu-sub {
-    font-size: 0.85rem;
-    color: #666;
-}
-
-/* Full Width Bars */
-.full-width-bar {
-    grid-column: 1 / -1;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 30px;
-}
-
-.bar-label {
-    font-weight: 600;
-    color: #fff;
-    min-width: 80px;
-}
-
-.portfolio-links,
-.details-info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.pill-btn {
-    background: #000;
-    border: 1px solid #222;
-    padding: 8px 16px;
-    border-radius: 20px;
-    color: #999;
-    font-size: 0.85rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.2s;
-}
-
-.pill-btn:hover {
-    border-color: #555;
-    color: #fff;
-}
-
-.flag {
-    font-size: 1.2rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
