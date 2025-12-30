@@ -325,9 +325,8 @@ a {
     opacity: 0.8;
 }
 
-.store-btn svg {
-    width: 20px;
-    height: 20px;
+.store-btn i {
+    font-size: 1.2rem;
 }
 
 /* Divider */
@@ -362,11 +361,11 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.25rem;
 }
 
-.social-icon svg {
-    width: 20px;
-    height: 20px;
+.social-icon i {
+    /* Font icon styling managed by class */
 }
 
 .social-icon:hover {
