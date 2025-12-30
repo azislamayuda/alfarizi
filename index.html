@@ -27,6 +27,12 @@
       background-color: #111;
       border: 1px solid #222;
       color: #777;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+      transition: all 0.2s;
       border-radius: 20px;
       aspect-ratio: 1/1;
       display: flex;
@@ -34,41 +40,43 @@
       justify-content: center;
       font-size: clamp(1.5rem, 4vw, 3rem);
       /* Responsive Icon Size */
-      transition: all 0.2s;
       width: 100%;
       text-decoration: none;
     }
 
     .lmyd-socbtn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
       color: #fff;
-      border-color: #444;
-      background-color: #161616;
+      border-color: rgba(255, 255, 255, 0.3);
     }
 
     .service-pill {
-      background: #1a1a1a;
-      border: 1px solid #333;
-      color: #ccc;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       padding: 8px 16px;
       border-radius: 50px;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      color: #ccc;
     }
 
     .tool-icon {
-      width: 45px;
-      height: 45px;
-      border-radius: 12px;
+      width: 50px;
+      height: 50px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
-      color: #fff;
+      border-radius: 12px;
+      font-size: 1.5rem;
+      background: #1a1a1a;
+      transition: transform 0.2s;
     }
 
     /* Custom Colors for Tools */
     .notion {
-      background: #222;
-      color: #fff;
+      background: #fff;
+      color: #000;
     }
 
     .figma {
