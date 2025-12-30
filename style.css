@@ -79,6 +79,15 @@ a {
     margin-right: 0.5rem;
 }
 
+/* =========================================
+   MOBILE VIEW STYLES
+   ========================================= */
+
+.mobile-view {
+    display: block;
+    width: 100%;
+}
+
 /* Parallax Hero Section */
 .hero-section {
     position: fixed;
@@ -266,7 +275,6 @@ a {
 .custom-footer {
     padding: 60px 20px 40px;
     background-color: #f8f9fa;
-    /* Light grey background */
     margin-top: 60px;
     border-top: 1px solid #eee;
     font-size: 0.9rem;
@@ -320,7 +328,6 @@ a {
 .footer-bottom {
     display: flex;
     justify-content: center;
-    /* Center since only copyright remains */
     align-items: center;
 }
 
@@ -336,18 +343,12 @@ a {
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-    /* Larger icons for visibility */
-}
-
-.social-icon i {
-    /* Font icon styling managed by class */
 }
 
 .social-icon:hover {
     color: var(--primary-color);
 }
 
-/* Responsive Footer */
 @media (min-width: 768px) {
     .footer-top {
         flex-direction: row;
@@ -361,66 +362,44 @@ a {
     }
 }
 
-/* Desktop Polish */
-@media (min-width: 992px) {
-    .container {
-        max-width: 1140px;
-    }
-
-    .hero-section {
-        width: 40%;
-        height: 100vh;
-        left: 0;
-        top: 0;
-        background-position: center;
-    }
-
-    .content-wrapper {
-        margin-top: 0;
-        margin-left: 40%;
-        width: 60%;
-        min-height: 100vh;
-        border-radius: 0;
-        padding-top: 3rem;
-    }
-
-    .hero-title {
-        display: none;
-    }
-
-    .drag-handle {
-        display: none;
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .profile-header {
-        padding-top: 0;
-    }
-}/* Responsive Visibility Utilities */
-.mobile-view {
-    display: block;
-}
+/* =========================================
+   DESKTOP VIEW (BENTO GRID)
+   ========================================= */
 
 .desktop-view {
     display: none;
 }
 
+/* Media Query to Switch Views */
 @media (min-width: 992px) {
+
+    /* Hide Mobile View */
     .mobile-view {
         display: none !important;
+        visibility: hidden;
+        height: 0;
+        overflow: hidden;
     }
 
+    /* Show Desktop View */
     .desktop-view {
         display: block !important;
+        visibility: visible;
         background-color: #050505;
-        /* Deep dark background */
         min-height: 100vh;
         color: #fff;
         font-family: 'Poppins', sans-serif;
         padding: 40px;
+    }
+
+    /* Reset global constraints that might interfere */
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        background-color: #050505;
+        /* Match bg */
+        color: #fff;
     }
 }
 
@@ -452,11 +431,11 @@ a {
     border-color: #333;
 }
 
-/* Typography in Grid */
 .bento-title {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 5px;
+    color: #fff;
 }
 
 .bento-subtitle {
@@ -487,7 +466,6 @@ a {
 /* Specific Cards */
 .avatar-card {
     background-color: #f0f0f0;
-    /* Light bg for image placeholder */
     height: 300px;
     padding: 0;
     display: flex;
@@ -558,7 +536,7 @@ a {
     font-size: 0.8rem;
 }
 
-/* Adobe Colors */
+/* Tool Colors */
 .ai {
     background: #330000;
     color: #ff9a00;
@@ -665,7 +643,6 @@ a {
     color: #fff;
 }
 
-/* Flag Icons */
 .flag {
     font-size: 1.2rem;
 }
