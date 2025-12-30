@@ -302,31 +302,10 @@ a {
     color: var(--primary-color);
 }
 
-/* App Buttons */
+/* App Buttons / Social Group */
 .footer-apps {
     display: flex;
-    gap: 15px;
-}
-
-.store-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #000;
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    transition: opacity 0.2s;
-}
-
-.store-btn:hover {
-    opacity: 0.8;
-}
-
-.store-btn i {
-    font-size: 1.2rem;
+    gap: 20px;
 }
 
 /* Divider */
@@ -340,19 +319,14 @@ a {
 /* Footer Bottom */
 .footer-bottom {
     display: flex;
-    flex-direction: column-reverse;
+    justify-content: center;
+    /* Center since only copyright remains */
     align-items: center;
-    gap: 20px;
 }
 
 .copyright {
     font-size: 0.85rem;
     color: #adb5bd;
-}
-
-.footer-socials {
-    display: flex;
-    gap: 20px;
 }
 
 .social-icon {
@@ -361,7 +335,8 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    /* Larger icons for visibility */
 }
 
 .social-icon i {
