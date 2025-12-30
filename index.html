@@ -18,51 +18,68 @@
       font-family: 'Inter', sans-serif;
     }
 
+    /* Shared Liquid Glass Effect */
+    .lmyd-card,
+    .lmyd-socbtn,
+    .service-pill,
+    .btn {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.01)) !important;
+      backdrop-filter: blur(40px);
+      -webkit-backdrop-filter: blur(40px);
+      border: 1px solid rgba(255, 255, 255, 0.18) !important;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37) !important;
+      color: #fff !important;
+    }
+
     .lmyd-card {
-      background: rgba(30, 30, 30, 0.5);
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-      transition: transform 0.2s, background 0.2s;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .lmyd-card:hover {
+      transform: translateY(-5px);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05)) !important;
+      border-color: rgba(255, 255, 255, 0.3) !important;
     }
 
     .lmyd-socbtn {
-      background-color: #111;
-      border: 1px solid #222;
-      color: #777;
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: #fff;
-      transition: all 0.2s;
-      border-radius: 20px;
+      border-radius: 24px;
       aspect-ratio: 1/1;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: clamp(1.5rem, 4vw, 3rem);
-      /* Responsive Icon Size */
       width: 100%;
       text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
     .lmyd-socbtn:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: scale(1.05);
-      color: #fff;
-      border-color: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05) translateY(-2px);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1)) !important;
+      border-color: rgba(255, 255, 255, 0.5) !important;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5) !important;
     }
 
     .service-pill {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 8px 16px;
+      padding: 10px 20px;
       border-radius: 50px;
       font-size: 0.9rem;
       white-space: nowrap;
-      color: #ccc;
+      transition: all 0.2s;
+    }
+
+    .service-pill:hover {
+      background: rgba(255, 255, 255, 0.2) !important;
+    }
+
+    .btn {
+      border-radius: 50px;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.2) !important;
+      transform: scale(1.05);
     }
 
     .tool-icon {
@@ -71,13 +88,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 12px;
+      border-radius: 16px;
       font-size: 1.5rem;
-      background: #1a1a1a;
       transition: transform 0.2s;
+      /* Tools keep their brand colors or glass? User said "btn", "pill", "card", "socbtn". Tools are .tool-icon. Assuming keep brand colors but maybe enhance border? */
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Custom Colors for Tools */
+    /* Custom Colors for Tools (Overriding glass if needed, or keeping them inside glass containers?) */
     .notion {
       background: #fff;
       color: #000;
