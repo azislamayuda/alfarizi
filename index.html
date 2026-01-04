@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AZIS LAMAYUDA | DISTRIBUTOR YASKAWA LENZE KEB</title>
-  <link rel="icon" href="avatar.webp" type="image/jpeg">
+  <link rel="icon" href="assets/img/avatar.webp" type="image/jpeg">
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- RemixIcon -->
@@ -135,13 +135,13 @@
   <div class="d-md-none mb-1">
     <div class="lmyd-card overflow-hidden border-0">
       <!-- Banner -->
-      <div style="height: 120px; background: url('banner_gen.webp') center/cover no-repeat;">
+      <div style="height: 120px; background: url('assets/img/banner_gen.webp') center/cover no-repeat;">
       </div>
 
       <div class="px-4 pb-4 position-relative">
         <!-- Avatar (Overlapping) -->
         <div class="position-absolute" style="top: -50px; left: 24px;">
-          <img src="avatar.webp" class="rounded-circle border border-4 border-black object-fit-cover"
+          <img src="assets/img/avatar.webp" class="rounded-circle border border-4 border-black object-fit-cover"
             style="width: 100px; height: 100px; background-color: #111;" alt="Avatar">
           <span class="position-absolute bottom-0 end-0 mb-1 me-1 fs-4">✌️</span>
         </div>
@@ -188,7 +188,7 @@
         <div
           class="card h-100 rounded-3 border-secondary border-opacity-10 lmyd-card p-3 d-flex align-items-center justify-content-center position-relative overflow-hidden">
           <!-- Placeholder Memoji -->
-          <img src="avatar.webp" class="rounded-circle object-fit-cover"
+          <img src="assets/img/avatar.webp" class="rounded-circle object-fit-cover"
             style="width: 100px; height: 100px; filter: grayscale(20%);" alt="Avatar">
           <span class="position-absolute bottom-0 end-0 m-3 fs-2">✌️</span>
         </div>
@@ -225,11 +225,11 @@
           </div>
           <!-- Gallery Images (Centered) -->
           <div class="d-flex justify-content-center align-items-center gap-3 flex-grow-1">
-            <img src="yaskawa.webp" class="rounded-3 shadow-sm object-fit-contain p-1" style="width: 30%; height: auto;"
+            <img src="assets/img/yaskawa.webp" class="rounded-3 shadow-sm object-fit-contain p-1" style="width: 30%; height: auto;"
               alt="Yaskawa Logo">
-            <img src="lenze.webp" class="rounded-3 shadow object-fit-contain p-1" style="width: 30%; height: auto;"
+            <img src="assets/img/lenze.webp" class="rounded-3 shadow object-fit-contain p-1" style="width: 30%; height: auto;"
               alt="Lenze Logo">
-            <img src="keb.webp" class="rounded-3 shadow-sm object-fit-contain p-1" style="width: 30%; height: auto;"
+            <img src="assets/img/keb.webp" class="rounded-3 shadow-sm object-fit-contain p-1" style="width: 30%; height: auto;"
               alt="KEB Logo">
           </div>
         </div>
@@ -279,27 +279,46 @@
     <!-- Row 4: Tools + Collab -->
     <div class="row g-3">
       <!-- Tools (Smaller) -->
-      <div class="col-md-6">
-        <div class="card h-100 rounded-3 border-secondary border-opacity-10 lmyd-card p-4">
-          <span class="text-secondary mb-4 d-block">Tools I use</span>
-          <div class="d-flex flex-wrap gap-3 justify-content-center">
-            <div class="tool-icon notion"><i class="ri-sticky-note-fill"></i></div>
-            <div class="tool-icon figma"><i class="ri-pen-nib-fill"></i></div>
-            <div class="tool-icon ai">Ai</div>
-            <div class="tool-icon webflow"><i class="ri-code-s-slash-fill"></i></div>
-            <div class="tool-icon framer"><i class="ri-layout-fill"></i></div>
+      <div class="col-md-8">
+        <div class="card h-100 rounded-3 border-secondary border-opacity-10 p-4">
+          <div class="card border-0 text-dark rounded-4 p-2 h-100">
+            <!-- Main Image -->
+            <div class="mb-2 position-relative">
+              <img src="assets/img/banner_gen.webp" class="w-100 rounded-3 object-fit-cover" style="height: 160px;"
+                alt="Main Gallery Image">
+            </div>
+            <!-- Thumbnails -->
+            <div class="d-flex gap-2 mb-3">
+              <div class="flex-fill position-relative rounded-3 overflow-hidden" style="height: 70px;">
+                <img src="assets/img/yaskawa.webp" class="w-100 h-100 object-fit-cover" alt="Thumbnail 1">
+              </div>
+              <div class="flex-fill position-relative rounded-3 overflow-hidden" style="height: 70px;">
+                <img src="assets/img/lenze.webp" class="w-100 h-100 object-fit-cover" alt="Thumbnail 2">
+              </div>
+              <div class="flex-fill position-relative rounded-3 overflow-hidden" style="height: 70px;">
+                <img src="assets/img/keb.webp" class="w-100 h-100 object-fit-cover" alt="Thumbnail 3">
+              </div>
+            </div>
+            <!-- Footer -->
+            <div class="d-flex justify-content-between align-items-center mt-auto px-1">
+              <span class="fw-bold fs-5 text-black">History</span>
+              <div class="d-flex align-items-center gap-1 text-secondary fw-medium small">
+                <i class="ri-image-2-line"></i>
+                <span>431</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Collab (Larger) -->
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div
           class="card h-100 rounded-3 border-secondary border-opacity-10 lmyd-card p-5 d-flex flex-column justify-content-center align-items-start">
           <h2 class="display-6 fw-medium text-white mb-2">Let's collab!</h2>
           <p class="text-secondary mb-4">Let's turn your idea into reality with my design experience!</p>
           <a href="#" class="btn btn-light rounded-pill px-4 py-2 fw-medium d-flex align-items-center gap-2">
-            Send a message now! <i class="ri-arrow-right-line"></i>
+            Get Quote now! <i class="ri-arrow-right-line"></i>
           </a>
         </div>
       </div>
