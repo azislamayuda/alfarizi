@@ -29,6 +29,15 @@ body {
   overflow-x: hidden;
 }
 
+/* SVG Icon Helper */
+.icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: -0.125em;
+  display: inline-block;
+}
+
 /* Background animated gradient glow */
 body::before {
   content: "";
