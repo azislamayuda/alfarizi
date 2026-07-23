@@ -412,7 +412,7 @@ body::after {
 
 .mobile-banner {
   height: 120px;
-  background: url('assets/img/banner_gen.webp') center/cover no-repeat;
+  background: url('../img/banner_gen.webp') center/cover no-repeat;
 }
 
 .mobile-content {
