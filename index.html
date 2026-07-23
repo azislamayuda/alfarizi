@@ -1,333 +1,153 @@
 <!doctype html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AZIS LAMAYUDA | DISTRIBUTOR YASKAWA LENZE KEB</title>
   <link rel="icon" href="assets/img/avatar.webp" type="image/jpeg">
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- RemixIcon -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
-
-    body {
-      background-color: #050505 !important;
-      font-family: 'Inter', sans-serif;
-    }
-
-    /* Shared Liquid Glass Effect */
-    .lmyd-card,
-    .lmyd-socbtn,
-    .service-pill,
-    .btn {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.01)) !important;
-      backdrop-filter: blur(40px);
-      -webkit-backdrop-filter: blur(40px);
-      border: 1px solid rgba(255, 255, 255, 0.18) !important;
-      color: #fff !important;
-    }
-
-    .lmyd-card {
-      transition: transform 0.3s ease, background 0.3s ease;
-    }
-
-    .lmyd-card:hover {
-      transform: translateY(-5px);
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05)) !important;
-      border-color: rgba(255, 255, 255, 0.3) !important;
-    }
-
-    .lmyd-card.border-0 {
-      border: none !important;
-    }
-
-    .lmyd-socbtn {
-      border-radius: 10px;
-      aspect-ratio: 1/1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: clamp(1.5rem, 4vw, 3rem);
-      width: 100%;
-      text-decoration: none;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-
-    .lmyd-socbtn:hover {
-      transform: scale(1.05) translateY(-2px);
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1)) !important;
-      border-color: rgba(255, 255, 255, 0.5) !important;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5) !important;
-    }
-
-    .service-pill {
-      padding: 10px 20px;
-      border-radius: 50px;
-      font-size: 0.9rem;
-      white-space: nowrap;
-      transition: all 0.2s;
-    }
-
-    .service-pill:hover {
-      background: rgba(255, 255, 255, 0.2) !important;
-    }
-
-    .btn {
-      border-radius: 50px;
-      transition: all 0.3s;
-    }
-
-    .btn:hover {
-      background: rgba(255, 255, 255, 0.2) !important;
-      transform: scale(1.05);
-    }
-
-    .tool-icon {
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 16px;
-      font-size: 1.5rem;
-      transition: transform 0.2s;
-      /* Tools keep their brand colors or glass? User said "btn", "pill", "card", "socbtn". Tools are .tool-icon. Assuming keep brand colors but maybe enhance border? */
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    /* Custom Colors for Tools (Overriding glass if needed, or keeping them inside glass containers?) */
-    .notion {
-      background: #fff;
-      color: #000;
-    }
-
-    .figma {
-      background: #1e1e1e;
-      border: 1px solid #333;
-    }
-
-    .webflow {
-      background: #14354c;
-      color: #4db3ff;
-    }
-
-    .ai {
-      background: #330000;
-      color: #ff9a00;
-      border: 1px solid #ff9a00;
-    }
-
-    .framer {
-      background: #000;
-      color: #fff;
-      border: 1px solid #333;
-    }
-  </style>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="py-0 py-md-5 d-block d-md-flex align-items-md-center min-vh-100">
+<body>
 
-  <!-- Mobile Header (Visible only on Mobile) -->
-  <div class="d-md-none mb-1">
-    <div class="lmyd-card overflow-hidden border-0">
+  <div class="container">
+
+    <!-- Mobile Header (Visible only on Mobile) -->
+    <div class="glass-card mobile-header reveal">
       <!-- Banner -->
-      <div style="height: 120px; background: url('assets/img/banner_gen.webp') center/cover no-repeat;">
-      </div>
+      <div class="mobile-banner"></div>
 
-      <div class="px-4 pb-4 position-relative">
+      <div class="mobile-content">
         <!-- Avatar (Overlapping) -->
-        <div class="position-absolute" style="top: -50px; left: 24px;">
-          <img src="assets/img/avatar.webp" class="rounded-circle border border-4 border-black object-fit-cover"
-            style="width: 100px; height: 100px; background-color: #111;" alt="Avatar">
-          <span class="position-absolute bottom-0 end-0 mb-1 me-1 fs-4">✌️</span>
+        <div class="mobile-avatar">
+          <img src="assets/img/avatar.webp" alt="Avatar">
+          <span class="avatar-emoji">✌️</span>
         </div>
 
         <!-- Content -->
-        <div style="padding-top: 60px;">
-          <h1 class="fw-bold text-white mb-1">Azis Lamayuda <i
-              class="ri-verified-badge-fill text-primary align-middle fs-5"></i></h1>
-          <p class="text-secondary m-0">Authorized Distributor & Service Partner</p>
+        <div class="mobile-info">
+          <h1 class="font-bold mb-2">Azis Lamayuda <i class="ri-verified-badge-fill" style="color: var(--accent-color);"></i></h1>
+          <p class="text-secondary mb-4">Authorized Distributor & Service Partner</p>
 
-          <div class="d-flex align-items-center gap-2 mt-3 text-secondary small">
-            <span class="d-flex align-items-center gap-1"><i class="ri-map-pin-line"></i> MJ</span>
+          <div class="status-badge mb-4 text-secondary">
+            <span><i class="ri-map-pin-line"></i> MJ</span>
             <span>•</span>
-            <span class="text-success d-flex align-items-center gap-1"><i class="ri-checkbox-circle-fill"></i>
-              Available</span>
+            <span style="color: #10b981;"><i class="ri-checkbox-circle-fill"></i> Available</span>
           </div>
 
           <!-- Get in Touch Button -->
-          <a href="#" class="btn btn-light bg-white text-black w-100 rounded-4 mt-4 py-2 fw-bold shadow-sm border-0">Get
-            in
-            Touch</a>
+          <a href="#" class="btn-primary" style="width: 100%;">Get in Touch</a>
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="container" style="max-width: 900px;">
-
 
     <!-- Desktop/Tablet Header (Hidden on Mobile) -->
-    <div class="row g-3 mb-3 d-none d-md-flex">
-      <div class="col-md-9">
-        <div
-          class="card h-100 rounded-3 border-secondary border-opacity-10 lmyd-card p-4 p-md-5 d-flex flex-column justify-content-center">
-          <h1 class="display-5 fw-medium text-white mb-2">Hey, I'm Azis Lamayuda</h1>
-          <p class="text-secondary fs-5 m-0">Authorized Distributor & Service Partner</p>
-          <div class="mt-4">
-            <a href="#" class="btn btn-light bg-white text-black rounded-pill px-4 py-2 fw-bold shadow-sm border-0">Get
-              in Touch</a>
-          </div>
+    <div class="grid-header reveal">
+      <div class="glass-card header-text">
+        <h1 class="font-medium">Hey, I'm Azis Lamayuda</h1>
+        <p class="text-secondary font-medium mb-4">Authorized Distributor & Service Partner</p>
+        <div class="mt-4">
+          <a href="#" class="btn-primary">Get in Touch</a>
         </div>
       </div>
-      <div class="col-md-3">
-        <div
-          class="card h-100 rounded-3 border-secondary border-opacity-10 lmyd-card p-3 d-flex align-items-center justify-content-center position-relative overflow-hidden">
-          <!-- Placeholder Memoji -->
-          <img src="assets/img/avatar.webp" class="rounded-circle object-fit-cover"
-            style="width: 100px; height: 100px; filter: grayscale(20%);" alt="Avatar">
-          <span class="position-absolute bottom-0 end-0 m-3 fs-2">✌️</span>
+      <div class="glass-card header-avatar">
+        <div class="avatar-wrapper">
+          <img src="assets/img/avatar.webp" class="avatar-img" alt="Avatar">
+          <span class="avatar-emoji">✌️</span>
         </div>
       </div>
     </div>
 
-    <!-- Row 2: Socials (5 Columns) -->
-    <div class="row row-cols-5 g-3 mb-3">
-      <div class="col">
-        <a href="#" class="lmyd-socbtn"><i class="ri-linkedin-fill"></i></a>
-      </div>
-      <div class="col">
-        <a href="#" class="lmyd-socbtn"><i class="ri-instagram-fill"></i></a>
-      </div>
-      <div class="col">
-        <a href="#" class="lmyd-socbtn"><i class="ri-tiktok-fill"></i></a>
-      </div>
-      <div class="col">
-        <a href="#" class="lmyd-socbtn"><i class="ri-facebook-circle-fill"></i></a>
-      </div>
-      <div class="col">
-        <a href="#" class="lmyd-socbtn"><i class="ri-article-fill"></i></a>
-      </div>
+    <!-- Row 2: Socials -->
+    <div class="grid-socials reveal">
+      <a href="#" class="glass-btn"><i class="ri-linkedin-fill"></i></a>
+      <a href="#" class="glass-btn"><i class="ri-instagram-fill"></i></a>
+      <a href="#" class="glass-btn"><i class="ri-tiktok-fill"></i></a>
+      <a href="#" class="glass-btn"><i class="ri-facebook-circle-fill"></i></a>
+      <a href="#" class="glass-btn"><i class="ri-article-fill"></i></a>
     </div>
 
     <!-- Row 3: Works + Services -->
-    <div class="row g-3 mb-3">
+    <div class="grid-main reveal">
       <!-- Recent Works (Larger) -->
-      <div class="col-md-8">
-        <div class="card h-100 rounded-3 border-secondary border-opacity-10 lmyd-card p-4">
-          <div class="d-flex justify-content-between align-items-center mb-4">
-            <span class="text-secondary">Main Brands</span>
-            <i class="ri-arrow-right-up-line text-secondary"></i>
-          </div>
-          <!-- Gallery Images (Centered) -->
-          <div class="d-flex justify-content-center align-items-center gap-3 flex-grow-1">
-            <img src="assets/img/yaskawa.webp" class="rounded-3 shadow-sm object-fit-contain p-1" style="width: 30%; height: auto;"
-              alt="Yaskawa Logo">
-            <img src="assets/img/lenze.webp" class="rounded-3 shadow object-fit-contain p-1" style="width: 30%; height: auto;"
-              alt="Lenze Logo">
-            <img src="assets/img/keb.webp" class="rounded-3 shadow-sm object-fit-contain p-1" style="width: 30%; height: auto;"
-              alt="KEB Logo">
-          </div>
+      <div class="glass-card brands-card">
+        <div class="card-title-row text-secondary">
+          <span>Main Brands</span>
+          <i class="ri-arrow-right-up-line"></i>
+        </div>
+        <!-- Gallery Images (Centered) -->
+        <div class="brands-container">
+          <img src="assets/img/yaskawa.webp" class="brand-img" alt="Yaskawa Logo">
+          <img src="assets/img/lenze.webp" class="brand-img" alt="Lenze Logo">
+          <img src="assets/img/keb.webp" class="brand-img" alt="KEB Logo">
         </div>
       </div>
 
       <!-- Services (Smaller) -->
-      <div class="col-md-4">
-        <div class="card h-100 rounded-3 border-secondary border-opacity-10 lmyd-card p-4">
-          <div class="d-flex justify-content-between align-items-center mb-4">
-            <span class="text-secondary">Products</span>
-            <i class="ri-arrow-right-up-line text-secondary"></i>
-          </div>
-          <div class="d-flex flex-column justify-content-center h-100 ps-2 pe-2">
-            <div class="d-flex align-items-center border-bottom border-secondary border-opacity-25 py-2">
-              <span class="me-3 text-secondary" style="width: 20px;">1.</span>
-              <span class="text-white">Inverter</span>
-            </div>
-            <div class="d-flex align-items-center border-bottom border-secondary border-opacity-25 py-2">
-              <span class="me-3 text-secondary" style="width: 20px;">2.</span>
-              <span class="text-white">Servo</span>
-            </div>
-            <div class="d-flex align-items-center border-bottom border-secondary border-opacity-25 py-2">
-              <span class="me-3 text-secondary" style="width: 20px;">3.</span>
-              <span class="text-white">Motor</span>
-            </div>
-            <div class="d-flex align-items-center border-bottom border-secondary border-opacity-25 py-2">
-              <span class="me-3 text-secondary" style="width: 20px;">4.</span>
-              <span class="text-white">Gearmotor</span>
-            </div>
-            <div class="d-flex align-items-center border-bottom border-secondary border-opacity-25 py-2">
-              <span class="me-3 text-secondary" style="width: 20px;">5.</span>
-              <span class="text-white">PLC</span>
-            </div>
-            <div class="d-flex align-items-center border-bottom border-secondary border-opacity-25 py-2">
-              <span class="me-3 text-secondary" style="width: 20px;">6.</span>
-              <span class="text-white">HMI</span>
-            </div>
-            <div class="d-flex align-items-center border-bottom border-secondary border-opacity-25 py-2">
-              <span class="me-3 text-secondary" style="width: 20px;">7.</span>
-              <span class="text-white">All Electrical Automation Part</span>
-            </div>
-          </div>
+      <div class="glass-card services-card">
+        <div class="card-title-row text-secondary">
+          <span>Products</span>
+          <i class="ri-arrow-right-up-line"></i>
+        </div>
+        <div class="service-list">
+          <div class="service-item"><span class="service-num">1.</span><span>Inverter</span></div>
+          <div class="service-item"><span class="service-num">2.</span><span>Servo</span></div>
+          <div class="service-item"><span class="service-num">3.</span><span>Motor</span></div>
+          <div class="service-item"><span class="service-num">4.</span><span>Gearmotor</span></div>
+          <div class="service-item"><span class="service-num">5.</span><span>PLC</span></div>
+          <div class="service-item"><span class="service-num">6.</span><span>HMI</span></div>
+          <div class="service-item"><span class="service-num">7.</span><span>All Electrical Automation Part</span></div>
         </div>
       </div>
     </div>
 
     <!-- Row 4: Tools + Collab -->
-    <div class="row g-3">
-      <!-- Tools (Smaller) -->
-      <div class="col-md-8">
-        <div class="card h-100 rounded-3 border-secondary border-opacity-10 lmyd-card p-4">
-          <div class="border-0 text-dark rounded-4 p-2 h-100">
-            <!-- Main Image -->
-            <div class="mb-2 position-relative">
-              <img src="assets/img/banner_gen.webp" class="w-100 rounded-3 object-fit-cover" style="height: 160px;"
-                alt="Main Gallery Image">
-            </div>
-            <!-- Thumbnails -->
-            <div class="d-flex gap-2 mb-3">
-              <div class="flex-fill position-relative rounded-3 overflow-hidden" style="height: 70px;">
-                <img src="assets/img/yaskawa.webp" class="w-100 h-100 object-fit-cover" alt="Thumbnail 1">
-              </div>
-              <div class="flex-fill position-relative rounded-3 overflow-hidden" style="height: 70px;">
-                <img src="assets/img/lenze.webp" class="w-100 h-100 object-fit-cover" alt="Thumbnail 2">
-              </div>
-              <div class="flex-fill position-relative rounded-3 overflow-hidden" style="height: 70px;">
-                <img src="assets/img/keb.webp" class="w-100 h-100 object-fit-cover" alt="Thumbnail 3">
-              </div>
-            </div>
-            <!-- Footer -->
-            <div class="d-flex justify-content-between align-items-center mt-auto px-1">
-              <span class="fw-bold fs-5 text-white">History</span>
-              <div class="d-flex align-items-center gap-1 text-secondary fw-medium small">
-                <i class="ri-image-2-line"></i>
-                <span>431</span>
-              </div>
-            </div>
+    <div class="grid-main reveal">
+      <!-- Tools / Gallery (Smaller) -->
+      <div class="glass-card gallery-card">
+        <div class="img-zoom-container">
+          <img src="assets/img/banner_gen.webp" class="gallery-main-img" alt="Main Gallery Image">
+        </div>
+        
+        <div class="gallery-thumbs">
+          <div class="thumb-wrapper">
+            <img src="assets/img/yaskawa.webp" class="thumb-img" alt="Thumbnail 1">
+          </div>
+          <div class="thumb-wrapper">
+            <img src="assets/img/lenze.webp" class="thumb-img" alt="Thumbnail 2">
+          </div>
+          <div class="thumb-wrapper">
+            <img src="assets/img/keb.webp" class="thumb-img" alt="Thumbnail 3">
+          </div>
+        </div>
+        
+        <div class="gallery-footer">
+          <span class="font-bold" style="font-size: 1.2rem;">History</span>
+          <div class="text-secondary font-medium" style="display: flex; align-items: center; gap: 5px;">
+            <i class="ri-image-2-line"></i>
+            <span>431</span>
           </div>
         </div>
       </div>
 
       <!-- Collab (Larger) -->
-      <div class="col-md-4">
-        <div
-          class="card h-100 rounded-3 border-secondary border-opacity-10 lmyd-card p-5 d-flex flex-column justify-content-center align-items-start">
-          <h2 class="display-6 fw-medium text-white mb-2">Let's collab!</h2>
-          <p class="text-secondary mb-4">Let's turn your idea into reality with my design experience!</p>
-          <a href="#" class="btn btn-light rounded-pill px-4 py-2 fw-medium d-flex align-items-center gap-2">
-            Get Quote now! <i class="ri-arrow-right-line"></i>
-          </a>
-        </div>
+      <div class="glass-card collab-card">
+        <h2>Let's collab!</h2>
+        <p class="text-secondary mb-4">Let's turn your idea into reality with my experience!</p>
+        <a href="#" class="btn-primary btn-icon mt-auto">
+          Get Quote now! <i class="ri-arrow-right-line"></i>
+        </a>
       </div>
     </div>
 
   </div>
 
-  <!-- Bootstrap 5.3.8 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
 </body>
 
 </html>
